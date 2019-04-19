@@ -26,7 +26,7 @@ class SettingsActivity : AppCompatActivity() {
         autostart = sharedPres.getBoolean(getString(R.string.preference_autostart_key), false)
         darkMode = sharedPres.getBoolean(getString(R.string.preference_darkmode_key), false)
         if (darkMode) {
-            setTheme(R.style.AppTheme_dark)
+            setTheme(R.style.DarkMode)
         }
         setContentView(R.layout.activity_settings)
         setSupportActionBar(settings_toolbar)

@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 		sharedPrefs = getSharedPreferences(getString(R.string.preference_key), Context.MODE_PRIVATE);
 		darkMode = sharedPrefs.getBoolean(getString(R.string.preference_darkmode_key), false);
 		if(darkMode){
-			setTheme(R.style.AppTheme_dark);
+			setTheme(R.style.DarkMode);
 		}
 
 		setContentView(R.layout.activity_main);

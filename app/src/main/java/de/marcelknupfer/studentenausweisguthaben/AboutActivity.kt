@@ -25,7 +25,7 @@ class AboutActivity : AppCompatActivity() {
         sharedPres = getSharedPreferences(getString(R.string.preference_key), Context.MODE_PRIVATE)
         darkMode = sharedPres.getBoolean(getString(R.string.preference_darkmode_key), false)
         if (darkMode) {
-            setTheme(R.style.AppTheme_dark)
+            setTheme(R.style.DarkMode)
         }
         setContentView(R.layout.activity_about)
         setSupportActionBar(about_toolbar)

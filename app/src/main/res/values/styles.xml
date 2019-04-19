@@ -4,9 +4,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style>#
+    </style>
 
-    <style name="AppTheme_dark" parent="Theme.MaterialComponents.NoActionBar">
+    <style name="DarkMode" parent="Theme.MaterialComponents.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary_darkmode</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark_darkmode</item>
         <item name="colorAccent">@color/colorAccent_darkmode</item>
