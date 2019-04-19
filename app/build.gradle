@@ -8,10 +8,10 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "de.marcelknupfer.studentenausweisguthaben"
-        minSdkVersion 26
+        minSdkVersion 17
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
+        versionName "0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -19,6 +19,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
     }
 }
 
