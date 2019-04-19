@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Mensa-Guthaben</string>
+    <string name="app_name">StudentID Guthaben</string>
     <string name="action_about">Über Mensa-Guthaben</string>
     <string name="action_settings">Einstellungen</string>
     <string name="place_on_card">Auf Mensakarte legen</string>
-    <string name="title_activity_about">Über Mensa-Guthaben</string>
     <string name="farebot">Diese App enthält Code von <a href="https://github.com/codebutler/farebot">farebot</a>, lizenziert unter GPL.</string>
     <string name="github">Der Quelltext ist auf <a href="https://github.com/antidau/MensaGuthaben">Github</a> verfügbar!</string>
-
     <string name="nfc_off">NFC ist ausgeschaltet</string>
     <string name="turn_nfc_on">Bitte NFC einschalten</string>
     <string name="goto_settings">Zu Einstellungen wechseln</string>
     <string name="last_withdrawal">Letzte Abbuchung:</string>
     <string name="card_not_supported">Karte nicht unterstützt</string>
     <string name="communication_fail">Kommunikation mit Karte fehlgeschlagen</string>
-
-    <string name="website">Wenn du die App an Karten von einer anderen Uni ausprobierst würde ich mich über Rückmeldungen freuen. Schreib mir <a href="mailto:jakobwenzel92@gmail.com">per Mail</a> oder <a href="https://github.com/jakobwenzel/MensaGuthaben/issues">auf Github</a>!</string>
     <string name="version">Version</string>
     <string name="fullscreen">Vollbild</string>
+    <string name="about_rights_reserved">All rights reserved</string>
+    <string name="about_copyright">©2019 Marcel Knupfer</string>
+    <string name="about_visit">Visit me on:</string>
+    <string name="twitter">Twitter</string>
+    <string name="googlePlay">Google Play</string>
+    <string name="website">Web</string>
+    <string name="website_link">https://marcelknupfer.de/apps/</string>
+    <string name="twitter_link">https://twitter.com/MobileMarci</string>
+    <string name="google_play_link">https://play.google.com/store/apps/developer?id=MobileMarci</string>
+    <string name="title_activity_about">Über</string>
+    <string name="licenses">Drittanbieter-Lizenzen</string>
+    <string name="title_activity_about2">About</string>
+    <string name="title_activity_licenses">Lizenzen</string>
 </resources>
