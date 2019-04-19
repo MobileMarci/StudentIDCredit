@@ -1,8 +1,11 @@
 package de.marcelknupfer.studentenausweisguthaben
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import com.google.android.material.snackbar.Snackbar
@@ -14,10 +17,19 @@ import java.lang.Exception
 
 class LicensesActivity : AppCompatActivity() {
 
+    private var darkMode = false
+    private lateinit var sharedPres: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        sharedPres = getSharedPreferences(getString(R.string.preference_key), Context.MODE_PRIVATE)
+        darkMode = sharedPres.getBoolean(getString(R.string.preference_darkmode_key), false)
+        if (darkMode) {
+            setTheme(R.style.AppTheme_dark)
+        }
         setContentView(R.layout.activity_licenses)
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setUpGPL3Text(mensaguthaben_license_text)
         setUpGPLText(farebot_license_text)
 
@@ -28,6 +40,17 @@ class LicensesActivity : AppCompatActivity() {
         farebot_github_button.setOnClickListener {
             onFarebotLinkClick()
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
+            else -> return super.onOptionsItemSelected(item)
+        }
+        return true
     }
 
     /**

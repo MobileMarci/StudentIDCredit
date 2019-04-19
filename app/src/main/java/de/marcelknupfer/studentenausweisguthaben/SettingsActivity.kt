@@ -4,11 +4,15 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.MenuItem
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
 
 import kotlinx.android.synthetic.main.activity_settings.*
 import kotlinx.android.synthetic.main.content_settings.*
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.Intent
+
+
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -18,12 +22,15 @@ class SettingsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_settings)
-        setSupportActionBar(settings_toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         sharedPres = getSharedPreferences(getString(R.string.preference_key), Context.MODE_PRIVATE)
         autostart = sharedPres.getBoolean(getString(R.string.preference_autostart_key), false)
         darkMode = sharedPres.getBoolean(getString(R.string.preference_darkmode_key), false)
+        if (darkMode) {
+            setTheme(R.style.AppTheme_dark)
+        }
+        setContentView(R.layout.activity_settings)
+        setSupportActionBar(settings_toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setUpSettings()
         autostartSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
             autoStartChanged(isChecked)
@@ -34,14 +41,13 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         darkModeSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
-            darkModeChanged(isChecked)
             with(sharedPres.edit()){
                 putBoolean(getString(R.string.preference_darkmode_key), isChecked)
                 commit()
             }
+            darkModeChanged(isChecked)
         }
     }
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
@@ -66,8 +72,10 @@ class SettingsActivity : AppCompatActivity() {
     private fun darkModeChanged(enabled:Boolean){
         if(enabled) {
             darkModeSettingsText.text = getString(R.string.enabled)
+            restartApp()
         }else{
             darkModeSettingsText.text = getString(R.string.disabled)
+            restartApp()
         }
     }
 
@@ -88,4 +96,18 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
+    private fun restartApp(){
+        /*val intent = Intent(applicationContext, MainActivity::class.java)
+        val mPendingIntentId = 1274638
+        val mPendingIntent =
+            PendingIntent.getActivity(applicationContext, mPendingIntentId, intent, PendingIntent.FLAG_CANCEL_CURRENT)
+        val mgr = applicationContext.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent)
+        //android.os.Process.killProcess(android.os.Process.myPid())
+        System.exit(0)*/
+        val intent = Intent(this, MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
+        finish()
+    }
 }

@@ -18,7 +18,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:paddingEnd="16dp"
                 app:titleTextColor="@color/white"
-                android:background="@color/colorPrimary"
+                android:background="?attr/colorPrimary"
                 android:paddingStart="6dp"
                 app:contentInsetStartWithNavigation="0dp"
                 app:navigationIcon="@drawable/ic_arrow_back24dp"/>

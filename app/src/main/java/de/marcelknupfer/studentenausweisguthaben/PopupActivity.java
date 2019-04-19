@@ -2,7 +2,9 @@ package de.marcelknupfer.studentenausweisguthaben;
 
 import android.annotation.TargetApi;
 import android.app.ActivityOptions;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.os.Build;
@@ -27,6 +29,9 @@ import de.marcelknupfer.studentenausweisguthaben.cardreader.ValueData;
  */
 public class PopupActivity extends AppCompatActivity {
 
+	private boolean darkMode = false;
+	private SharedPreferences sharedPres;
+
 	private static String TAG = PopupActivity.class.getSimpleName();
 
 	private static final String VALUE_TAG = "value";
@@ -35,7 +40,11 @@ public class PopupActivity extends AppCompatActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		sharedPres = getSharedPreferences(getString(R.string.preference_key), Context.MODE_PRIVATE);
+		darkMode = sharedPres.getBoolean(getString(R.string.preference_darkmode_key), false);
+		if (darkMode) {
+			setTheme(R.style.AppTheme_dark);
+		}
 		setContentView(R.layout.popup_main);
 
 

@@ -1,13 +1,13 @@
 package de.marcelknupfer.studentenausweisguthaben
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import de.marcelknupfer.studentenausweisguthaben.BuildConfig
-import de.marcelknupfer.studentenausweisguthaben.R
 import kotlinx.android.synthetic.main.activity_about.*
 
 /**
@@ -17,8 +17,16 @@ import kotlinx.android.synthetic.main.activity_about.*
 
 class AboutActivity : AppCompatActivity() {
 
+    private var darkMode = false
+    private lateinit var sharedPres:SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        sharedPres = getSharedPreferences(getString(R.string.preference_key), Context.MODE_PRIVATE)
+        darkMode = sharedPres.getBoolean(getString(R.string.preference_darkmode_key), false)
+        if (darkMode) {
+            setTheme(R.style.AppTheme_dark)
+        }
         setContentView(R.layout.activity_about)
         setSupportActionBar(about_toolbar)
         supportActionBar?.title = getString(R.string.title_activity_about)

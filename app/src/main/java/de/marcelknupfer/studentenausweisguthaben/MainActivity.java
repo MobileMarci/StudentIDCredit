@@ -23,10 +23,7 @@
 package de.marcelknupfer.studentenausweisguthaben;
 
 import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
+import android.content.*;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.IsoDep;
@@ -52,13 +49,15 @@ import de.marcelknupfer.studentenausweisguthaben.cardreader.ValueData;
 public class MainActivity extends AppCompatActivity {
 	private static final String VALUE_TAG = "Value Fragment";
 	public static final String EXTRA_VALUE = "valueData";
-	public static final String ACTION_FULLSCREEN = "de.yazo_games.mensaguthaben.Fullscreen";
+	public static final String ACTION_FULLSCREEN = "de.marcelknupfer.studentenausweisguthaben.Fullscreen";
 
 	private NfcAdapter mAdapter;
 	private PendingIntent mPendingIntent;
 	private IntentFilter[] mFilters;
 	private String[][] mTechLists;
     private IntentFilter mIntentFilter;
+    private SharedPreferences sharedPrefs;
+    private boolean darkMode = false;
 
 	boolean mResumed = false;
 
@@ -94,6 +93,12 @@ public class MainActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		sharedPrefs = getSharedPreferences(getString(R.string.preference_key), Context.MODE_PRIVATE);
+		darkMode = sharedPrefs.getBoolean(getString(R.string.preference_darkmode_key), false);
+		if(darkMode){
+			setTheme(R.style.AppTheme_dark);
+		}
+
 		setContentView(R.layout.activity_main);
 
 		Log.i(TAG,"activity started");
@@ -107,14 +112,13 @@ public class MainActivity extends AppCompatActivity {
 			valueFragment = new ValueFragment();
 		}
 		fm.beginTransaction().replace(R.id.main, valueFragment,VALUE_TAG).commit();
-
-		if (getIntent().getAction().equals(ACTION_FULLSCREEN)) {
-			ValueData valueData = (ValueData) getIntent().getSerializableExtra(EXTRA_VALUE);
-			valueFragment.setValueData(valueData);
-
-			setResult(0);
-			
-
+		String action = getIntent().getAction();
+		if(action != null) {
+			if (action.equals(ACTION_FULLSCREEN)) {
+				ValueData valueData = (ValueData) getIntent().getSerializableExtra(EXTRA_VALUE);
+				valueFragment.setValueData(valueData);
+				setResult(0);
+			}
 		}
 
 		//TODO Autostart is disabled because  it leads to crashes, check why
@@ -143,13 +147,14 @@ public class MainActivity extends AppCompatActivity {
 		mFilters = new IntentFilter[] { tech, };
 		mTechLists = new String[][] { new String[] { IsoDep.class.getName(),
 				NfcA.class.getName() } };
-
-		if (getIntent().getAction().equals(ACTION_FULLSCREEN) &&!hasNewData) {
+		if(action != null) {
+			if (action.equals(ACTION_FULLSCREEN) &&!hasNewData) {
 			ValueData valueData = (ValueData) getIntent().getSerializableExtra(EXTRA_VALUE);
 			Log.w(TAG,"restoring data for fullscreen");
 			valueFragment.setValueData(valueData);
-
+			}
 		}
+
 	}
 
 	private boolean hasNewData = false;
