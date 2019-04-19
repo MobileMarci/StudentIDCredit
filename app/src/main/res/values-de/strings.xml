@@ -4,7 +4,7 @@
     <string name="app_name">StudentID Guthaben</string>
     <string name="action_about">Über Mensa-Guthaben</string>
     <string name="action_settings">Einstellungen</string>
-    <string name="place_on_card">Auf Mensakarte legen</string>
+    <string name="place_on_card">Halte deinen Studierendenausweis bzw. deine Mensa-Karte an die Rückseite deines Smartphones.</string>
     <string name="farebot">farebot</string>
     <string name="nfc_off">NFC ist ausgeschaltet</string>
     <string name="turn_nfc_on">Bitte NFC einschalten</string>
@@ -34,4 +34,7 @@
     <string name="mensaguthaben_link">https://github.com/jakobwenzel/MensaGuthaben</string>
     <string name="license">Lizenz:</string>
     <string name="farebot_link">https://github.com/codebutler/farebot</string>
+    <string name="studentid">Studierendenausweis</string>
+    <string name="Current">Guthaben:</string>
+    <string name="withdrawal">Letzte Abbuchung:</string>
 </resources>

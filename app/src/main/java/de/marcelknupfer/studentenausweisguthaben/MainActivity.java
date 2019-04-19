@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 		valueFragment = (ValueFragment) fm.findFragmentByTag(VALUE_TAG);
-		if (valueFragment ==null) {
+		if (valueFragment == null) {
 			valueFragment = new ValueFragment();
 		}
 		fm.beginTransaction().replace(R.id.main, valueFragment,VALUE_TAG).commit();
@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
 
 		}
 
+		//TODO Autostart is disabled because  it leads to crashes, check why
 		//Boolean autostart = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("autostart",true);
         //AutostartRegister.register(getPackageManager(),autostart);
 
@@ -151,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 
-	boolean hasNewData = false;
+	private boolean hasNewData = false;
 
 	@Override
 	public void onNewIntent(Intent intent) {

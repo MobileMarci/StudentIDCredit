@@ -10,7 +10,6 @@
     <com.google.android.material.appbar.AppBarLayout
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:theme="@style/AppTheme.AppBarOverlay"
             android:elevation="8dp">
 
         <androidx.appcompat.widget.Toolbar
@@ -18,7 +17,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:paddingEnd="16dp"
-                app:titleTextColor="@color/black"
+                app:titleTextColor="@color/white"
+                android:background="@color/colorPrimary"
                 android:paddingStart="6dp"
                 app:contentInsetStartWithNavigation="0dp"
                 app:navigationIcon="@drawable/ic_arrow_back24dp"/>

@@ -11,10 +11,10 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:minHeight="?attr/actionBarSize"
-		android:background="?attr/colorPrimary"
+		android:background="@color/colorPrimary"
+		app:titleTextColor="@color/white"
 		android:elevation="10dp"
 		android:id="@+id/toolbar"
-
-		app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+		app:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
 	</FrameLayout>

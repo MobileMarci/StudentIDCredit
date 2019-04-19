@@ -29,7 +29,7 @@ public class ValueFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.fragment_value, container, false);
+		View v = inflater.inflate(R.layout.value_card, container, false);
 
 		tvCurrentValue = ((TextView) v.findViewById(R.id.current));
 		tvLastValue = (TextView) v.findViewById(R.id.last);
@@ -58,7 +58,7 @@ public class ValueFragment extends Fragment {
 
 	private void updateView() {
 		if (valueData==null) {
-			tvCurrentValue.setText(getString(R.string.place_on_card));
+			//tvCurrentValue.setText("-");
 			tvLastValue.setVisibility(View.GONE);
 		} else {
 
@@ -66,7 +66,7 @@ public class ValueFragment extends Fragment {
 			tvCurrentValue.setText(current);
 			if (valueData.lastTransaction != null) {
 				String last = moneyStr(valueData.lastTransaction);
-				tvLastValue.setText(getString(R.string.last_withdrawal) + " " + last);
+				tvLastValue.setText(last);
 				tvLastValue.setVisibility(View.VISIBLE);
 			} else {
 				tvLastValue.setVisibility(View.GONE);

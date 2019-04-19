@@ -3,7 +3,7 @@
     <!-- These settings headers are only used on tablets. -->
 
     <header
-        android:fragment="de.yazo_games.mensaguthaben.SettingsActivity$GeneralPreferenceFragment"
+        android:fragment="de.marcelknupfer.studentenausweisguthaben.SettingsActivity$GeneralPreferenceFragment"
         android:title="@string/pref_header_general" />
 
 
