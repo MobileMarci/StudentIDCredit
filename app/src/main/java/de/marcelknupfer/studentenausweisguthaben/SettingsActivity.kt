@@ -97,14 +97,6 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun restartApp(){
-        /*val intent = Intent(applicationContext, MainActivity::class.java)
-        val mPendingIntentId = 1274638
-        val mPendingIntent =
-            PendingIntent.getActivity(applicationContext, mPendingIntentId, intent, PendingIntent.FLAG_CANCEL_CURRENT)
-        val mgr = applicationContext.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent)
-        //android.os.Process.killProcess(android.os.Process.myPid())
-        System.exit(0)*/
         val intent = Intent(this, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
