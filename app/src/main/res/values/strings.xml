@@ -8,11 +8,7 @@
     <string name="copyright" translatable="false">
         <a href="http://jakobwenzel.github.io/MensaGuthaben">© 2017 Jakob Wenzel</a>
     </string>
-    <string name="farebot">This app contains code from <a href="https://github.com/codebutler/farebot">farebot</a> licensed
-        under GPL
-    </string>
-    <string name="github">Find the Source Code on <a href="https://github.com/antidau/MensaGuthaben">Github</a>!
-    </string>
+    <string name="farebot">farebot</string>
     <string name="nfc_off">NFC is off</string>
     <string name="turn_nfc_on">Please turn on NFC</string>
     <string name="goto_settings">go to settings</string>
@@ -34,5 +30,13 @@
     <string name="title_activity_about2">AboutActivity2</string>
     <string name="title_activity_licenses">LicensesActivity</string>
     <string name="licenses">Third Party Licenses</string>
+    <string name="licenceText">This application is licensed under GPL3 and the source code is available on GitHub</string>
+    <string name="github_button">Github</string>
+    <string name="license_introduction">This list contains all the Open Source projects and third party software
+        used to build the application.
+    </string>
+    <string name="mensaguthaben_link">https://github.com/jakobwenzel/MensaGuthaben</string>
+    <string name="license">License:</string>
+    <string name="farebot_link">https://github.com/codebutler/farebot</string>
 
 </resources>

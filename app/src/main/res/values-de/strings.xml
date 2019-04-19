@@ -5,8 +5,7 @@
     <string name="action_about">Über Mensa-Guthaben</string>
     <string name="action_settings">Einstellungen</string>
     <string name="place_on_card">Auf Mensakarte legen</string>
-    <string name="farebot">Diese App enthält Code von <a href="https://github.com/codebutler/farebot">farebot</a>, lizenziert unter GPL.</string>
-    <string name="github">Der Quelltext ist auf <a href="https://github.com/antidau/MensaGuthaben">Github</a> verfügbar!</string>
+    <string name="farebot">farebot</string>
     <string name="nfc_off">NFC ist ausgeschaltet</string>
     <string name="turn_nfc_on">Bitte NFC einschalten</string>
     <string name="goto_settings">Zu Einstellungen wechseln</string>
@@ -28,4 +27,11 @@
     <string name="licenses">Drittanbieter-Lizenzen</string>
     <string name="title_activity_about2">About</string>
     <string name="title_activity_licenses">Lizenzen</string>
+    <string name="licenceText">Diese App steht unter GPL3 Lizenz. Ihr Quellcode ist auf Github verfügbar.</string>
+    <string name="github_button">Github</string>
+    <string name="license_introduction">"Diese Liste enthält jede Open Source Software und Drittsoftware, auf deren Basis diese App läuft."
+    </string>
+    <string name="mensaguthaben_link">https://github.com/jakobwenzel/MensaGuthaben</string>
+    <string name="license">Lizenz:</string>
+    <string name="farebot_link">https://github.com/codebutler/farebot</string>
 </resources>

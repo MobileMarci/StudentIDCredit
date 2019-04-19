@@ -80,16 +80,6 @@
                             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
                             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"/>
                     <TextView
-                            android:text="@string/about_rights_reserved"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/textView5" android:layout_marginTop="8dp"
-                            app:layout_constraintTop_toBottomOf="@+id/textView4"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-                            android:layout_marginStart="8dp"
-                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"/>
-                    <TextView
                             android:text="@string/about_visit"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -136,9 +126,27 @@
                             android:id="@+id/license_button"
                             app:layout_constraintEnd_toEndOf="parent"
                             android:layout_marginEnd="8dp"
-                            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView5"
                             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-                            style="@style/Widget.MaterialComponents.Button.TextButton"/>
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/licenceText"/>
+                    <TextView
+                            android:text="TextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/licenceText"
+                            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView4"
+                            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"/>
+                    <Button
+                            android:text="@string/github_button"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/github_button"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintTop_toBottomOf="@+id/google_play_button"
+                            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/google_play_button"
+                            app:layout_constraintStart_toStartOf="@+id/google_play_button"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
