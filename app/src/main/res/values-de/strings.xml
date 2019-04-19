@@ -3,6 +3,7 @@
 
     <string name="app_name">StudRead</string>
     <string name="credit">Guthaben</string>
+    <string name="autostart">Automatisch starten</string>
     <string name="action_settings">Einstellungen</string>
     <string name="place_on_card">Halte deinen Studierendenausweis bzw. deine Mensa-Karte an die Rückseite deines Smartphones.</string>
     <string name="farebot">farebot</string>
@@ -40,4 +41,6 @@
     <string name="licenseInfo">Diese App ist Open Source und lizensiert unter der GPL3. Den Sorce-Code auf Github
         findest du unten.
     </string>
+    <string name="enabled">An</string>
+    <string name="disabled">Aus</string>
 </resources>

@@ -233,4 +233,7 @@ public class MainActivity extends AppCompatActivity {
 		super.onDestroy();
 		valueFragment = null;
 	}
+
+	private void setTheme(){
+	}
 }

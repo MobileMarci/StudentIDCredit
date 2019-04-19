@@ -5,8 +5,8 @@
     <uses-permission android:name="android.permission.NFC"/>
 
     <uses-feature
-        android:name="android.hardware.nfc"
-        android:required="true"/>
+            android:name="android.hardware.nfc"
+            android:required="true"/>
 
     <application
             android:allowBackup="true"
@@ -16,14 +16,19 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
+                android:name=".SettingsActivity"
+                android:label="@string/title_activity_settings"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
                 android:name=".LicensesActivity"
                 android:label="@string/title_activity_licenses"
-                android:theme="@style/AppTheme.NoActionBar">
+                android:theme="@style/AppTheme">
         </activity>
         <activity
                 android:name=".AboutActivity"
                 android:label="@string/title_activity_about"
-                android:theme="@style/AppTheme.NoActionBar">
+                android:theme="@style/AppTheme">
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -32,26 +37,26 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".SettingsActivity"/>
         <activity android:name=".PopupActivity"/>
-        <meta-data android:name="preloaded_fonts" android:resource="@array/preloaded_fonts"/>
 
         <activity-alias
                 android:name=".ActivityAlias"
-                android:targetActivity=".PopupActivity"
-                android:enabled="true">
-
+                android:enabled="true"
+                android:targetActivity=".PopupActivity">
             <intent-filter>
-                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+                <action android:name="android.nfc.action.TECH_DISCOVERED"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
 
             <meta-data
                     android:name="android.nfc.action.TECH_DISCOVERED"
-                    android:resource="@xml/tech" />
+                    android:resource="@xml/tech"/>
         </activity-alias>
 
+        <meta-data
+                android:name="preloaded_fonts"
+                android:resource="@array/preloaded_fonts"/>
     </application>
 
 </manifest>
