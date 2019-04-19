@@ -40,6 +40,10 @@ class AboutActivity : AppCompatActivity() {
         license_button.setOnClickListener {
             onThirdPartyLicencseClick()
         }
+
+        github_button.setOnClickListener {
+            onGitHubClick()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -88,6 +92,11 @@ class AboutActivity : AppCompatActivity() {
      */
     private fun onThirdPartyLicencseClick() {
         val intent = Intent(this, LicensesActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun onGitHubClick() {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.github_link)))
         startActivity(intent)
     }
 

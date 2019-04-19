@@ -11,7 +11,7 @@
         android:orderInCategory="100"
         app:showAsAction="always"
         android:icon="@drawable/ic_info_outline_black_24dp"
-        android:title="@string/action_about"/>
+        android:title="@string/title_activity_about"/>
 
 
 </menu>

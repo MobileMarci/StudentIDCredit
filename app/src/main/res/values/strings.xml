@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">StudentID Credit</string>
-    <string name="action_about">About Mensa-Guthaben</string>
+    <string name="app_name">StudRead</string>
+    <string name="credit">Credit</string>
     <string name="action_settings">Settings</string>
     <string name="place_on_card">Place your student id card or your Mensa card on the back of your phone.</string>
-    <string name="copyright" translatable="false">
-        <a href="http://jakobwenzel.github.io/MensaGuthaben">© 2017 Jakob Wenzel</a>
-    </string>
+    <string name="licenseInfo">This application is Open Source and licensed under GPL3. You can find the sources on GitHub below.</string>
     <string name="farebot">farebot</string>
+    <string name="github_link" translatable="false">https://github.com/MobileMarci/StudentIDCredit</string>
     <string name="nfc_off">NFC is off</string>
     <string name="turn_nfc_on">Please turn on NFC</string>
     <string name="goto_settings">go to settings</string>

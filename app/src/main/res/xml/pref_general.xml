@@ -1,10 +1,10 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <CheckBoxPreference
+    <!--<CheckBoxPreference
             android:key="autostart"
             android:title="@string/pref_title_autostart"
             android:summary="@string/pref_description_autostart"
-            android:defaultValue="false"/>
+            android:defaultValue="false"/>-->
 
     <SwitchPreference
         android:key="darkmode"
