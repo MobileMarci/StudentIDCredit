@@ -51,4 +51,5 @@
     <string name="preference_darkmode_key" translatable="false">fhhidgfidgf47hgfjhhgdh</string>
     <string name="enabled">Enabled</string>
     <string name="disabled">Disabled</string>
+    <string name="autostart_explanation">Automatically start the app when touching the back of your phone with a compatible nfc card.</string>
 </resources>

@@ -43,4 +43,8 @@
     </string>
     <string name="enabled">An</string>
     <string name="disabled">Aus</string>
+    <string name="title_activity_settings">Einstellungen</string>
+    <string name="autostart_explanation">Startet automatisch die App, wenn eine NFC Karte an die Rückseite des
+        Smartphones gehalten wird.
+    </string>
 </resources>
