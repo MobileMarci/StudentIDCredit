@@ -118,8 +118,8 @@ public class MainActivity extends AppCompatActivity {
 		}
 
 		//TODO Autostart is disabled because  it leads to crashes, check why
-		//Boolean autostart = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("autostart",true);
-        //AutostartRegister.register(getPackageManager(),autostart);
+		Boolean autostart = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("autostart",true);
+        AutostartRegister.register(getPackageManager(),autostart);
 
 		Toolbar t = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(t);

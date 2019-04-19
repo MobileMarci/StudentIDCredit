@@ -38,7 +38,7 @@ public class AutostartRegister {
 
         Log.i(TAG,"Setting to "+enabled);
         pm.setComponentEnabledSetting(
-                new ComponentName("de.yazo_games.mensaguthaben", "de.yazo_games.mensaguthaben.ActivityAlias"),
+                new ComponentName("de.marcelknupfer.studentenausweisguthaben", "de.marcelknupfer.studentenausweisguthaben.ActivityAlias"),
                 enabled,
                 PackageManager.DONT_KILL_APP);
     }

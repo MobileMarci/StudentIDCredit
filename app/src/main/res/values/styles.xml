@@ -22,7 +22,7 @@
 
 	</style>
     <style name="AppTheme_Dark" parent="Theme.MaterialComponents.Light.NoActionBar">
-        
+
     </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
