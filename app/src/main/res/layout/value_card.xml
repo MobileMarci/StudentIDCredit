@@ -42,7 +42,7 @@
             <TextView
                     android:text="@string/Current"
                     android:layout_width="wrap_content"
-                    android:layout_height="17dp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/credit_tv"
                     android:textColor="@color/white" android:textStyle="bold"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
