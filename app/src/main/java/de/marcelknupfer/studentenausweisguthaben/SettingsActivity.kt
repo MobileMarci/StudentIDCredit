@@ -8,8 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import kotlinx.android.synthetic.main.activity_settings.*
 import kotlinx.android.synthetic.main.content_settings.*
-import android.app.AlarmManager
-import android.app.PendingIntent
 import android.content.Intent
 
 /**

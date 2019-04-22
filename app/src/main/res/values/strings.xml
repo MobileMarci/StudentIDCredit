@@ -54,5 +54,7 @@
     <string name="autostart_explanation">Automatically start the app when touching the back of your phone with a
         compatible nfc card.
     </string>
-    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_main2" translatable="false">Main2Activity</string>
+    <string name="action_fullscreen_main" translatable="false">de.marcelknupfer.studentenausweisguthaben.Fullscreen</string>
+    <string name="extra_value_main" translatable="false">valueData</string>
 </resources>

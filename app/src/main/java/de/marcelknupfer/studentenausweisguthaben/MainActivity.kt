@@ -24,7 +24,7 @@ import kotlinx.android.synthetic.main.activity_main2.*
 /**
  * New MainActivity written in Kotlin
  */
-class Main2Activity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private val VALUE_TAG = "Value Fragment"
     val EXTRA_VALUE = "valueData"

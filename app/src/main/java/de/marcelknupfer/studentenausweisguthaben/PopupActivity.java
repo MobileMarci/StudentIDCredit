@@ -89,8 +89,8 @@ public class PopupActivity extends AppCompatActivity {
 		switch (item.getItemId()) {
 			case R.id.fullscreen:
 				Intent intent = new Intent(PopupActivity.this, MainActivity.class);
-				intent.setAction(MainActivity.ACTION_FULLSCREEN);
-				intent.putExtra(MainActivity.EXTRA_VALUE, valueFragment.getValueData());
+				intent.setAction(getString(R.string.action_fullscreen_main));
+				intent.putExtra(getString(R.string.extra_value_main), valueFragment.getValueData());
 
 				if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP) {
 					animateActivity21(intent);

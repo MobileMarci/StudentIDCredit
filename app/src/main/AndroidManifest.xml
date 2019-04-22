@@ -15,7 +15,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".Main2Activity"
+                android:name=".MainActivity"
 
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -38,9 +38,6 @@
                 android:name=".AboutActivity"
                 android:label="@string/title_activity_about"
                 android:theme="@style/AppTheme">
-        </activity>
-        <activity android:name=".MainActivity">
-
         </activity>
         <activity android:name=".PopupActivity"/>
 
