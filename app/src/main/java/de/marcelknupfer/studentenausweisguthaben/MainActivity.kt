@@ -27,8 +27,6 @@ import kotlinx.android.synthetic.main.activity_main2.*
 class MainActivity : AppCompatActivity() {
 
     private val VALUE_TAG = "Value Fragment"
-    val EXTRA_VALUE = "valueData"
-    val ACTION_FULLSCREEN = "de.marcelknupfer.studentenausweisguthaben.Fullscreen"
 
     private var mAdapter: NfcAdapter? = null
     private var mPendingIntent: PendingIntent? = null
@@ -72,8 +70,8 @@ class MainActivity : AppCompatActivity() {
         fm.beginTransaction().replace(R.id.main_fragment_container, valueFragment ?: ValueFragment()).commit()
 
         var action = intent.action ?: "noAction"
-        if(action?.equals(ACTION_FULLSCREEN)){
-            var valueData = intent.getSerializableExtra(EXTRA_VALUE) as ValueData
+        if(action?.equals(getString(R.string.action_fullscreen_main))){
+            var valueData = intent.getSerializableExtra(getString(R.string.extra_value_main)) as ValueData
             valueFragment?.valueData = valueData
             setResult(0)
         }
@@ -105,8 +103,8 @@ class MainActivity : AppCompatActivity() {
         val tech = IntentFilter(NfcAdapter.ACTION_TECH_DISCOVERED)
         mFilters = arrayOf(tech)
         mTechLists = arrayOf(arrayOf(IsoDep::class.java.name, NfcA::class.java.name))
-        if (action == ACTION_FULLSCREEN && !hasNewData) {
-                val valueData = intent.getSerializableExtra(EXTRA_VALUE) as ValueData
+        if (action == getString(R.string.action_fullscreen_main) && !hasNewData) {
+                val valueData = intent.getSerializableExtra(getString(R.string.extra_value_main)) as ValueData
                 Log.w(TAG, "restoring data for fullscreen")
                 valueFragment?.setValueData(valueData)
             }
@@ -175,8 +173,8 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, R.string.communication_fail, Toast.LENGTH_SHORT).show()
             }
 
-        } else if (getIntent().action == ACTION_FULLSCREEN) {
-            val valueData = getIntent().getSerializableExtra(EXTRA_VALUE) as ValueData
+        } else if (getIntent().action == getString(R.string.action_fullscreen_main)) {
+            val valueData = getIntent().getSerializableExtra(getString(R.string.extra_value_main)) as ValueData
             valueFragment?.valueData = valueData
 
         }
