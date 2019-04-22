@@ -22,7 +22,7 @@ import de.marcelknupfer.studentenausweisguthaben.cardreader.ValueData
 import kotlinx.android.synthetic.main.activity_main2.*
 
 /**
- * New MainActivity written in Kotlin
+ * MainActivity and entry point of StudRead
  */
 class MainActivity : AppCompatActivity() {
 
