@@ -48,7 +48,7 @@ public class PopupActivity extends AppCompatActivity {
 		setContentView(R.layout.popup_main);
 
 
-		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
 		toolbar.setTitle(R.string.app_name);
 		setSupportActionBar(toolbar);
 
@@ -116,12 +116,12 @@ public class PopupActivity extends AppCompatActivity {
 			options = ActivityOptions.makeSceneTransitionAnimation(PopupActivity.this,
 					Pair.create(findViewById(R.id.current), "current"),
 					Pair.create(findViewById(R.id.last), "last"),
-					Pair.create(findViewById(R.id.toolbar), "toolbar")
+					Pair.create(findViewById(R.id.main_toolbar), "toolbar")
 			);
 		} else {
 			options = ActivityOptions.makeSceneTransitionAnimation(PopupActivity.this,
 					Pair.create(findViewById(R.id.current), "current"),
-					Pair.create(findViewById(R.id.toolbar), "toolbar")
+					Pair.create(findViewById(R.id.main_toolbar), "toolbar")
 			);
 		}
 

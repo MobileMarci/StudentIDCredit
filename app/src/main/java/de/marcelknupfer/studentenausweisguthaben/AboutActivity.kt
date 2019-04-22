@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_about.*
 
 /**
  * @author © 2019 Marcel Knupfer
- * Activity that shows information about LazyDo
+ * Activity that shows information about StudRead
  */
 
 class AboutActivity : AppCompatActivity() {

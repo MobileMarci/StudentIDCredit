@@ -14,7 +14,7 @@
 		android:background="?attr/colorPrimary"
 		app:titleTextColor="@color/white"
 		android:elevation="10dp"
-		android:id="@+id/toolbar"
+		android:id="@+id/main_toolbar"
 		app:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
 	</FrameLayout>

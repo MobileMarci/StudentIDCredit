@@ -58,18 +58,18 @@ public class ValueFragment extends Fragment {
 
 	private void updateView() {
 		if (valueData==null) {
-			//tvCurrentValue.setText("-");
-			tvLastValue.setVisibility(View.GONE);
+			tvCurrentValue.setVisibility(View.INVISIBLE);
+			tvLastValue.setVisibility(View.INVISIBLE);
 		} else {
-
 			String current = moneyStr(valueData.value);
+			tvCurrentValue.setVisibility(View.VISIBLE);
 			tvCurrentValue.setText(current);
 			if (valueData.lastTransaction != null) {
 				String last = moneyStr(valueData.lastTransaction);
 				tvLastValue.setText(last);
 				tvLastValue.setVisibility(View.VISIBLE);
 			} else {
-				tvLastValue.setVisibility(View.GONE);
+				tvLastValue.setVisibility(View.INVISIBLE);
 			}
 		}
 	}

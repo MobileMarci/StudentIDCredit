@@ -66,7 +66,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:id="@+id/autostartSettingsLayout"
                 android:layout_marginTop="0dp"
-                android:background="?android:attr/selectableItemBackground" android:clickable="true">
+                android:background="?android:attr/selectableItemBackground" android:clickable="true"
+                android:visibility="gone">
 
             <TextView
                     android:text="@string/autostart"

@@ -43,7 +43,7 @@
     <string name="license">License:</string>
     <string name="farebot_link">https://github.com/codebutler/farebot</string>
     <string name="studentid">Student ID</string>
-    <string name="Current">Current Credit</string>
+    <string name="Current">Current Credit:</string>
     <string name="withdrawal">Last withdrawal:</string>
     <string name="title_activity_settings">Settings</string>
     <string name="preference_key" translatable="false">149274843</string>
@@ -51,5 +51,8 @@
     <string name="preference_darkmode_key" translatable="false">fhhidgfidgf47hgfjhhgdh</string>
     <string name="enabled">Enabled</string>
     <string name="disabled">Disabled</string>
-    <string name="autostart_explanation">Automatically start the app when touching the back of your phone with a compatible nfc card.</string>
+    <string name="autostart_explanation">Automatically start the app when touching the back of your phone with a
+        compatible nfc card.
+    </string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>

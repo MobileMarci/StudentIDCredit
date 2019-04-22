@@ -6,15 +6,16 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
 import android.widget.TextView
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
 
 import kotlinx.android.synthetic.main.activity_licenses.*
 import kotlinx.android.synthetic.main.content_licenses.*
 import java.lang.Exception
 
+/**
+ * Displays all third party licenses of software used to build this application
+ */
 class LicensesActivity : AppCompatActivity() {
 
     private var darkMode = false
@@ -28,7 +29,7 @@ class LicensesActivity : AppCompatActivity() {
             setTheme(R.style.DarkMode)
         }
         setContentView(R.layout.activity_licenses)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(main_toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setUpGPL3Text(mensaguthaben_license_text)
         setUpGPLText(farebot_license_text)

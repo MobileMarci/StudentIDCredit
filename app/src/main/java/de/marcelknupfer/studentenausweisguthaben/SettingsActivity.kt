@@ -12,7 +12,10 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Intent
 
-
+/**
+ * @author © 2019 Marcel Knupfer
+ * Custom Settings Activity
+ */
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -60,6 +63,9 @@ class SettingsActivity : AppCompatActivity() {
         return true
     }
 
+    /**
+     * Activates the autostart for recognized Student IDs next to the phone
+     */
     private fun autoStartChanged(checked: Boolean){
         AutostartRegister.register(packageManager, checked)
         if(checked) {
@@ -69,6 +75,9 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Activates or deactivates the darkmode
+     */
     private fun darkModeChanged(enabled:Boolean){
         if(enabled) {
             darkModeSettingsText.text = getString(R.string.enabled)
@@ -79,6 +88,9 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Sets up all the views related to settings
+     */
     private fun setUpSettings(){
         autostartSwitch.isChecked = autostart
         darkModeSwitch.isChecked = darkMode
@@ -96,6 +108,9 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Closes the current activity, clears the activity stack and starts the Main activity
+     */
     private fun restartApp(){
         val intent = Intent(this, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)

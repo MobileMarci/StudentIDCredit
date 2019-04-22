@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
 		Boolean autostart = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("autostart",true);
         AutostartRegister.register(getPackageManager(),autostart);
 
-		Toolbar t = (Toolbar) findViewById(R.id.toolbar);
+		Toolbar t = (Toolbar) findViewById(R.id.main_toolbar);
 		setSupportActionBar(t);
 		ViewCompat.setTransitionName(t,"toolbar");
 
