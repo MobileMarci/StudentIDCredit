@@ -26,7 +26,8 @@ import de.marcelknupfer.studentenausweisguthaben.cardreader.ValueHolder
 import de.marcelknupfer.studentenausweisguthaben.ui.fragments.ValueFragment
 
 /**
- * Created by wenzel on 28.11.14.
+ * @author © 2019 Marcel Knupfer
+ * Popup Activity that will open when NFC card is recognized
  */
 class PopupActivity: AppCompatActivity() {
 

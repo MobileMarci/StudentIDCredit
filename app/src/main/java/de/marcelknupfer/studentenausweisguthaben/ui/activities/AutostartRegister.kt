@@ -1,13 +1,13 @@
 package de.marcelknupfer.studentenausweisguthaben.ui.activities
 
-/*
+/**
  * AutostartRegister.kt
  *
  * Copyright (C) 2014 Jakob Wenzel
  *
- * Authors:
+ * @author
  * Jakob Wenzel <jakobwenzel92@gmail.com> (original Java version)
- *  Marcel Knupfer (Kotlin version)
+ * Marcel Knupfer (Kotlin version)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

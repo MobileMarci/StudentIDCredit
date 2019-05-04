@@ -24,6 +24,7 @@ import de.marcelknupfer.studentenausweisguthaben.ui.fragments.ValueFragment
 import kotlinx.android.synthetic.main.activity_main2.*
 
 /**
+ * @author © 2019 Marcel Knupfer
  * MainActivity and entry point of StudRead
  */
 class MainActivity : AppCompatActivity() {

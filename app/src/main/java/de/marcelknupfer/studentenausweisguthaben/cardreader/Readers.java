@@ -28,8 +28,6 @@ import android.util.Log;
 
 import com.codebutler.farebot.card.desfire.DesfireException;
 import com.codebutler.farebot.card.desfire.DesfireProtocol;
-import de.marcelknupfer.studentenausweisguthaben.cardreader.ValueHolder;
-
 import java.io.IOException;
 
 

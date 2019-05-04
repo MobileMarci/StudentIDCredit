@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.content_licenses.*
 import java.lang.Exception
 
 /**
+ * @author © 2019 Marcel Knupfer
  * Displays all third party licenses of software used to build this application
  */
 class LicensesActivity : AppCompatActivity() {
