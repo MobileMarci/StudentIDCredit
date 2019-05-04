@@ -6,8 +6,8 @@ package de.marcelknupfer.studentenausweisguthaben.ui.activities
  * Copyright (C) 2014 Jakob Wenzel
  *
  * Authors:
- * Jakob Wenzel <jakobwenzel92@gmail.com>
- *  Marcel Knupfer
+ * Jakob Wenzel <jakobwenzel92@gmail.com> (original Java version)
+ *  Marcel Knupfer (Kotlin version)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

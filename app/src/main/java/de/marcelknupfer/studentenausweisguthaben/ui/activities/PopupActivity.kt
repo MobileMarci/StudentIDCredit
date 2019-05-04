@@ -45,8 +45,10 @@ class PopupActivity: AppCompatActivity() {
 
 
         val toolbar = findViewById<View>(R.id.main_toolbar) as Toolbar
-        toolbar.setTitle(R.string.app_name)
+        toolbar.setTitle(R.string.credit)
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_close_white_24dp)
 
         Log.i(TAG, "activity started")
 
@@ -68,8 +70,7 @@ class PopupActivity: AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menu.add(Menu.NONE, R.id.fullscreen, Menu.NONE, R.string.fullscreen).setIcon(R.drawable.ic_action_full_screen)
-            .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS)
+        menuInflater.inflate(R.menu.popup_menu, menu)
         return true
     }
 
@@ -95,6 +96,11 @@ class PopupActivity: AppCompatActivity() {
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                 }
 
+                return true
+            }
+
+            android.R.id.home ->{
+                this.finish()
                 return true
             }
             else -> return super.onOptionsItemSelected(item)
