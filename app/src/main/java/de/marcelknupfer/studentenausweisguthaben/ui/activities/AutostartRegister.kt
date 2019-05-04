@@ -1,10 +1,13 @@
+package de.marcelknupfer.studentenausweisguthaben.ui.activities
+
 /*
- * AutostartRegister.java
+ * AutostartRegister.kt
  *
  * Copyright (C) 2014 Jakob Wenzel
  *
  * Authors:
  * Jakob Wenzel <jakobwenzel92@gmail.com>
+ *  Marcel Knupfer
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,26 +23,31 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.marcelknupfer.studentenausweisguthaben.ui.activities;
 
-import android.content.ComponentName;
-import android.content.pm.PackageManager;
-import android.util.Log;
+import android.content.ComponentName
+import android.content.pm.PackageManager
+import android.util.Log
 
 /**
  * register or unregister the app to be autostarted on nfc discovery
  */
-public class AutostartRegister {
-	private static final String TAG = AutostartRegister.class.getName();
-    static void register(PackageManager pm, boolean autostart) {
-        Log.i(TAG, "Autostart is " + autostart);
-        int enabled = autostart ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED :
-                PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
+object AutostartRegister {
+    private val TAG = AutostartRegister::class.java.name
+    internal fun register(pm: PackageManager, autostart: Boolean?) {
+        Log.i(TAG, "Autostart is $autostart")
+        val enabled = if (autostart?: false)
+            PackageManager.COMPONENT_ENABLED_STATE_ENABLED
+        else
+            PackageManager.COMPONENT_ENABLED_STATE_DISABLED
 
-        Log.i(TAG,"Setting to "+enabled);
+        Log.i(TAG, "Setting to $enabled")
         pm.setComponentEnabledSetting(
-                new ComponentName("de.marcelknupfer.studentenausweisguthaben", "de.marcelknupfer.studentenausweisguthaben.ActivityAlias"),
-                enabled,
-                PackageManager.DONT_KILL_APP);
+            ComponentName(
+                "de.marcelknupfer.studentenausweisguthaben",
+                "de.marcelknupfer.studentenausweisguthaben.ActivityAlias"
+            ),
+            enabled,
+            PackageManager.DONT_KILL_APP
+        )
     }
 }

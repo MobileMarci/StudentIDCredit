@@ -10,7 +10,7 @@
 
     <application
             android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@mipmap/ic_launcher2"
             android:label="@string/credit"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
@@ -39,6 +39,7 @@
                 android:label="@string/title_activity_about"
                 android:theme="@style/AppTheme">
         </activity>
+
         <activity android:name=".ui.activities.PopupActivity"/>
 
         <activity-alias

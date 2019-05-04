@@ -1,15 +1,16 @@
 <resources>
 
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
     </style>
 
     <style name="DarkMode" parent="Theme.MaterialComponents.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary_darkmode</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark_darkmode</item>
-        <item name="colorAccent">@color/colorAccent_darkmode</item>
+        <item name="colorAccent">@color/colorPrimaryDark </item>
+        <item name="android:windowBackground">@color/black</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>

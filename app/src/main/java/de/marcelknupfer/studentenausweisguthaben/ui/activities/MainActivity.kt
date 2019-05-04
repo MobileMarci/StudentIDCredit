@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         AutostartRegister.register(packageManager,
-            PreferenceManager.getDefaultSharedPreferences(this).getBoolean("autostart", false))
+            sharedPrefs?.getBoolean(getString(R.string.preference_autostart_key), false))
 
 
         ViewCompat.setTransitionName(main_toolbar, "toolbar")

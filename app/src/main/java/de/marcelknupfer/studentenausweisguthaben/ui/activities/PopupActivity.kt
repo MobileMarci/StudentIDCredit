@@ -19,18 +19,16 @@ import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.fragment.app.FragmentManager
 import com.codebutler.farebot.card.desfire.DesfireException
 import de.marcelknupfer.studentenausweisguthaben.R
 import de.marcelknupfer.studentenausweisguthaben.cardreader.Readers
-import de.marcelknupfer.studentenausweisguthaben.cardreader.ValueData
 import de.marcelknupfer.studentenausweisguthaben.cardreader.ValueHolder
 import de.marcelknupfer.studentenausweisguthaben.ui.fragments.ValueFragment
 
 /**
  * Created by wenzel on 28.11.14.
  */
-class PopUpActivity2: AppCompatActivity() {
+class PopupActivity: AppCompatActivity() {
 
     private var darkMode = false
     private var sharedPres: SharedPreferences? = null
@@ -84,7 +82,7 @@ class PopUpActivity2: AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.fullscreen -> {
-                val intent = Intent(this@PopUpActivity2, MainActivity::class.java)
+                val intent = Intent(this@PopupActivity, MainActivity::class.java)
                 intent.action = getString(R.string.action_fullscreen_main)
                 intent.putExtra(getString(R.string.extra_value_main), valueFragment!!.valueData)
 
@@ -110,14 +108,14 @@ class PopUpActivity2: AppCompatActivity() {
         //TODO check what happens if last is empty
         if (valueFragment!!.valueData != null) {
             options = ActivityOptions.makeSceneTransitionAnimation(
-                this@PopUpActivity2,
+                this@PopupActivity,
                 Pair.create(findViewById(R.id.current), "current"),
                 Pair.create(findViewById(R.id.last), "last"),
                 Pair.create(findViewById(R.id.main_toolbar), "toolbar")
             )
         } else {
             options = ActivityOptions.makeSceneTransitionAnimation(
-                this@PopUpActivity2,
+                this@PopupActivity,
                 Pair.create(findViewById(R.id.current), "current"),
                 Pair.create(findViewById(R.id.main_toolbar), "toolbar")
             )
