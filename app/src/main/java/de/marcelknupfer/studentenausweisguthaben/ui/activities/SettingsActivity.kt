@@ -1,4 +1,4 @@
-package de.marcelknupfer.studentenausweisguthaben
+package de.marcelknupfer.studentenausweisguthaben.ui.activities
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import kotlinx.android.synthetic.main.activity_settings.*
 import kotlinx.android.synthetic.main.content_settings.*
 import android.content.Intent
+import de.marcelknupfer.studentenausweisguthaben.R
 
 /**
  * @author © 2019 Marcel Knupfer

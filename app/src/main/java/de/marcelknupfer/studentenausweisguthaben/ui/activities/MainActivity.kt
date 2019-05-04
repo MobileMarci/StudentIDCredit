@@ -1,4 +1,4 @@
-package de.marcelknupfer.studentenausweisguthaben
+package de.marcelknupfer.studentenausweisguthaben.ui.activities
 
 import android.app.PendingIntent
 import android.content.*
@@ -16,8 +16,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.ViewCompat
 import com.codebutler.farebot.NfcOffFragment
 import com.codebutler.farebot.card.desfire.DesfireException
+import de.marcelknupfer.studentenausweisguthaben.R
 import de.marcelknupfer.studentenausweisguthaben.cardreader.Readers
 import de.marcelknupfer.studentenausweisguthaben.cardreader.ValueData
+import de.marcelknupfer.studentenausweisguthaben.ui.fragments.ValueFragment
 
 import kotlinx.android.synthetic.main.activity_main2.*
 

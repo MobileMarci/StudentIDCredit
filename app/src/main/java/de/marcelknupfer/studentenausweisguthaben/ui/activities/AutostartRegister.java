@@ -20,7 +20,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.marcelknupfer.studentenausweisguthaben;
+package de.marcelknupfer.studentenausweisguthaben.ui.activities;
 
 import android.content.ComponentName;
 import android.content.pm.PackageManager;

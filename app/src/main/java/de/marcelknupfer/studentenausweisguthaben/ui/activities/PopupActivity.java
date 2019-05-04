@@ -1,4 +1,4 @@
-package de.marcelknupfer.studentenausweisguthaben;
+package de.marcelknupfer.studentenausweisguthaben.ui.activities;
 
 import android.annotation.TargetApi;
 import android.app.ActivityOptions;
@@ -21,8 +21,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import com.codebutler.farebot.card.desfire.DesfireException;
+import de.marcelknupfer.studentenausweisguthaben.R;
 import de.marcelknupfer.studentenausweisguthaben.cardreader.Readers;
 import de.marcelknupfer.studentenausweisguthaben.cardreader.ValueData;
+import de.marcelknupfer.studentenausweisguthaben.cardreader.ValueHolder;
+import de.marcelknupfer.studentenausweisguthaben.ui.fragments.ValueFragment;
 
 /**
  * Created by wenzel on 28.11.14.
@@ -80,8 +83,8 @@ public class PopupActivity extends AppCompatActivity {
 	@Override
 	public void onStart() {
 		super.onStart();
-		if (ValueHolder.data!=null)
-			valueFragment.setValueData(ValueHolder.data);
+		if (ValueHolder.INSTANCE.getDataValues()!=null)
+			valueFragment.setValueData(ValueHolder.INSTANCE.getDataValues());
 	}
 
 	@Override

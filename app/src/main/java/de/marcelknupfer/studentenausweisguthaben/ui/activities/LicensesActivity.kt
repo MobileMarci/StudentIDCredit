@@ -1,4 +1,4 @@
-package de.marcelknupfer.studentenausweisguthaben
+package de.marcelknupfer.studentenausweisguthaben.ui.activities
 
 import android.content.Context
 import android.content.Intent
@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity;
+import de.marcelknupfer.studentenausweisguthaben.R
 
 import kotlinx.android.synthetic.main.activity_licenses.*
 import kotlinx.android.synthetic.main.content_licenses.*

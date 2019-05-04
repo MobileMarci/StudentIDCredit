@@ -6,7 +6,7 @@
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
                                                    android:layout_marginTop="?android:attr/actionBarSize"
-                                                   tools:context="de.marcelknupfer.studentenausweisguthaben.ValueFragment">
+                                                   tools:context="de.marcelknupfer.studentenausweisguthaben.ui.fragments.ValueFragment">
 
     <androidx.cardview.widget.CardView
             app:cardCornerRadius="20dp"

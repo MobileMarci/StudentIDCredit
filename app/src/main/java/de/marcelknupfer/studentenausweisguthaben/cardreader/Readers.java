@@ -28,7 +28,7 @@ import android.util.Log;
 
 import com.codebutler.farebot.card.desfire.DesfireException;
 import com.codebutler.farebot.card.desfire.DesfireProtocol;
-import de.marcelknupfer.studentenausweisguthaben.ValueHolder;
+import de.marcelknupfer.studentenausweisguthaben.cardreader.ValueHolder;
 
 import java.io.IOException;
 
@@ -85,7 +85,7 @@ public class Readers implements ICardReader {
 			tech.connect();
 
 			ValueData val = Readers.getInstance().readCard(desfireTag);
-			ValueHolder.data=val;
+			ValueHolder.INSTANCE.setDataValues(val);
 			return val;
 
 

@@ -1,4 +1,4 @@
-package de.marcelknupfer.studentenausweisguthaben;
+package de.marcelknupfer.studentenausweisguthaben.ui.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import java.util.Currency;
 
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
+import de.marcelknupfer.studentenausweisguthaben.R;
 import de.marcelknupfer.studentenausweisguthaben.cardreader.ValueData;
 
 public class ValueFragment extends Fragment {
@@ -29,10 +30,10 @@ public class ValueFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.value_card, container, false);
+		View view = inflater.inflate(R.layout.value_card, container, false);
 
-		tvCurrentValue = ((TextView) v.findViewById(R.id.current));
-		tvLastValue = (TextView) v.findViewById(R.id.last);
+		tvCurrentValue = ((TextView) view.findViewById(R.id.current));
+		tvLastValue = (TextView) view.findViewById(R.id.last);
 
 		ViewCompat.setTransitionName(tvCurrentValue, "current");
 		ViewCompat.setTransitionName(tvLastValue, "last");
@@ -43,7 +44,7 @@ public class ValueFragment extends Fragment {
 
 		updateView();
 
-		return v;
+		return view;
 	}
 
 	private String moneyStr(int i) {
