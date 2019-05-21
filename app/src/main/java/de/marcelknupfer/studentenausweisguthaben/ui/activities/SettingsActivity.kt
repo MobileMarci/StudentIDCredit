@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import kotlinx.android.synthetic.main.activity_settings.*
 import kotlinx.android.synthetic.main.content_settings.*
 import android.content.Intent
+import android.os.Build
 import de.marcelknupfer.studentenausweisguthaben.R
 
 /**
@@ -34,6 +35,7 @@ class SettingsActivity : AppCompatActivity() {
         setSupportActionBar(settings_toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setUpSettings()
+        setupDarkMode()
         autostartSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
             autoStartChanged(isChecked)
             with (sharedPres.edit()){
@@ -115,5 +117,17 @@ class SettingsActivity : AppCompatActivity() {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
         finish()
+    }
+
+    private fun setupDarkMode(){
+        if(darkMode){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                autostartSettingsImage.setColorFilter(getColor(R.color.white))
+                darkModeSettingsImage.setColorFilter(getColor(R.color.white))
+            } else {
+                autostartSettingsImage.setColorFilter(resources.getColor(R.color.white))
+                darkModeSettingsImage.setColorFilter(resources.getColor(R.color.white))
+            }
+        }
     }
 }

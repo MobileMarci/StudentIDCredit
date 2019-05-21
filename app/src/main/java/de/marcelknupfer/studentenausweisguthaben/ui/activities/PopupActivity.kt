@@ -58,7 +58,7 @@ class PopupActivity: AppCompatActivity() {
 
         valueFragment = fm.findFragmentByTag(VALUE_TAG) as ValueFragment?
         if (valueFragment == null) {
-            valueFragment = ValueFragment()
+            valueFragment = ValueFragment.newInstance("PopUp")
             fm.beginTransaction().replace(R.id.main, valueFragment!!, VALUE_TAG).commit()
         }
 
@@ -78,7 +78,7 @@ class PopupActivity: AppCompatActivity() {
     public override fun onStart() {
         super.onStart()
         if (ValueHolder.getDataValues() != null)
-            valueFragment!!.valueData = ValueHolder.getDataValues()
+            valueFragment!!.setValueData(ValueHolder.getDataValues() ?: return)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -86,7 +86,7 @@ class PopupActivity: AppCompatActivity() {
             R.id.fullscreen -> {
                 val intent = Intent(this@PopupActivity, MainActivity::class.java)
                 intent.action = getString(R.string.action_fullscreen_main)
-                intent.putExtra(getString(R.string.extra_value_main), valueFragment!!.valueData)
+                intent.putExtra(getString(R.string.extra_value_main), valueFragment!!.getValueData())
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     animateActivity21(intent)
@@ -113,7 +113,7 @@ class PopupActivity: AppCompatActivity() {
     private fun animateActivity21(intent: Intent) {
         val options: ActivityOptions
         //TODO check what happens if last is empty
-        if (valueFragment!!.valueData != null) {
+        if (valueFragment!!.getValueData() != null) {
             options = ActivityOptions.makeSceneTransitionAnimation(
                 this@PopupActivity,
                 Pair.create(findViewById(R.id.current), "current"),
@@ -153,7 +153,7 @@ class PopupActivity: AppCompatActivity() {
             try {
                 val `val` = Readers.getInstance().readTag(tag)
 
-                valueFragment!!.valueData = `val`
+                valueFragment!!.setValueData(`val`)
 
 
             } catch (e: DesfireException) {

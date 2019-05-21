@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         var action = intent.action ?: "noAction"
         if(action?.equals(getString(R.string.action_fullscreen_main))){
             var valueData = intent.getSerializableExtra(getString(R.string.extra_value_main)) as ValueData
-            valueFragment?.valueData = valueData
+            valueFragment?.setValueData(valueData)
             setResult(0)
         }
 
@@ -169,7 +169,7 @@ class MainActivity : AppCompatActivity() {
             try {
                 val cardValues = Readers.getInstance().readTag(tag)
                 Log.w(TAG, "Setting read data")
-                valueFragment?.valueData = cardValues
+                valueFragment?.setValueData(cardValues)
                 hasNewData = true
 
             } catch (e: DesfireException) {
@@ -178,7 +178,7 @@ class MainActivity : AppCompatActivity() {
 
         } else if (getIntent().action == getString(R.string.action_fullscreen_main)) {
             val valueData = getIntent().getSerializableExtra(getString(R.string.extra_value_main)) as ValueData
-            valueFragment?.valueData = valueData
+            valueFragment?.setValueData(valueData)
 
         }
     }
