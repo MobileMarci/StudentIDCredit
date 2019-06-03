@@ -46,8 +46,9 @@ public class Readers implements ICardReader {
 		for (ICardReader reader : readers) {
 			Log.i(TAG,"Trying "+reader.getClass().getSimpleName());
 			ValueData val = reader.readCard(card);
-			if (val!=null)
+			if (val!=null) {
 				return val;
+			}
 		}
 		return null;
 	}
@@ -83,7 +84,9 @@ public class Readers implements ICardReader {
 			tech.connect();
 
 			ValueData val = Readers.getInstance().readCard(desfireTag);
-			ValueHolder.INSTANCE.setDataValues(val);
+			if(val != null) {
+				ValueHolder.INSTANCE.setDataValues(val);
+			}
 			return val;
 
 

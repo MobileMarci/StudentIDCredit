@@ -29,7 +29,11 @@ class ValueFragment: Fragment(){
         //ViewCompat.setTransitionName(tvCurrentValue, "current")
         //ViewCompat.setTransitionName(tvLastValue, "last")
         if (savedInstanceState != null) {
-            valueData = savedInstanceState.getSerializable(VALUE) as ValueData
+            try {
+                valueData = savedInstanceState.getSerializable(VALUE) as ValueData
+            }catch (e:TypeCastException){
+                //TODO catch this error
+            }
         }
         if(parentTag.equals("PopUp")){
             infoText.visibility = View.INVISIBLE

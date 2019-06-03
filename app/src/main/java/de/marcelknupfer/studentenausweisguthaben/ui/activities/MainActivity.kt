@@ -22,6 +22,7 @@ import de.marcelknupfer.studentenausweisguthaben.cardreader.ValueData
 import de.marcelknupfer.studentenausweisguthaben.ui.fragments.ValueFragment
 
 import kotlinx.android.synthetic.main.activity_main2.*
+import java.lang.IllegalArgumentException
 
 /**
  * @author © 2019 Marcel Knupfer
@@ -173,6 +174,8 @@ class MainActivity : AppCompatActivity() {
                 hasNewData = true
 
             } catch (e: DesfireException) {
+                Toast.makeText(this, R.string.communication_fail, Toast.LENGTH_SHORT).show()
+            }catch(f: IllegalArgumentException){
                 Toast.makeText(this, R.string.communication_fail, Toast.LENGTH_SHORT).show()
             }
 
