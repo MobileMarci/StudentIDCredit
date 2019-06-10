@@ -23,6 +23,7 @@ import de.marcelknupfer.studentenausweisguthaben.ui.fragments.ValueFragment
 
 import kotlinx.android.synthetic.main.activity_main2.*
 import java.lang.IllegalArgumentException
+import java.lang.IllegalStateException
 
 /**
  * @author © 2019 Marcel Knupfer
@@ -166,16 +167,16 @@ class MainActivity : AppCompatActivity() {
         if (NfcAdapter.ACTION_TECH_DISCOVERED == intent.action) {
             Log.i(TAG, "Discovered tag with intent: $intent")
             val tag = intent.getParcelableExtra<Tag>(NfcAdapter.EXTRA_TAG)
-
             try {
                 val cardValues = Readers.getInstance().readTag(tag)
                 Log.w(TAG, "Setting read data")
                 valueFragment?.setValueData(cardValues)
                 hasNewData = true
-
             } catch (e: DesfireException) {
                 Toast.makeText(this, R.string.communication_fail, Toast.LENGTH_SHORT).show()
             }catch(f: IllegalArgumentException){
+                Toast.makeText(this, R.string.communication_fail, Toast.LENGTH_SHORT).show()
+            }catch(g: IllegalStateException){
                 Toast.makeText(this, R.string.communication_fail, Toast.LENGTH_SHORT).show()
             }
 

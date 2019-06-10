@@ -15,6 +15,7 @@ class ValueFragment: Fragment(){
     val VALUE = "value"
     private var valueData: ValueData? = null
     private var parentTag: String = ""
+    private lateinit var instance: ValueFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,7 +60,7 @@ class ValueFragment: Fragment(){
          * @return A new instance of fragment BlankFragment.
          */
         @JvmStatic
-        fun newInstance(parent:String) =
+        fun newInstance(parent:String):ValueFragment =
             ValueFragment().apply {
                 arguments = Bundle().apply {
                     parentTag = parent
@@ -99,7 +100,4 @@ class ValueFragment: Fragment(){
         if (current != null)
             updateView()
     }
-
-
-
 }
