@@ -24,6 +24,7 @@ import de.marcelknupfer.studentenausweisguthaben.R
 import de.marcelknupfer.studentenausweisguthaben.cardreader.Readers
 import de.marcelknupfer.studentenausweisguthaben.cardreader.ValueHolder
 import de.marcelknupfer.studentenausweisguthaben.ui.fragments.ValueFragment
+import java.lang.IllegalStateException
 
 /**
  * @author © 2019 Marcel Knupfer
@@ -144,22 +145,17 @@ class PopupActivity: AppCompatActivity() {
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
-
         if (NfcAdapter.ACTION_TECH_DISCOVERED == intent.action) {
             Log.i(TAG, "Discovered tag with intent: $intent")
             val tag = intent.getParcelableExtra<Tag>(NfcAdapter.EXTRA_TAG)
-
-
             try {
                 val `val` = Readers.getInstance().readTag(tag)
-
                 valueFragment!!.setValueData(`val`)
-
-
             } catch (e: DesfireException) {
                 Toast.makeText(this, R.string.communication_fail, Toast.LENGTH_SHORT).show()
+            }catch (ist: IllegalStateException){
+                Toast.makeText(this, R.string.communication_fail, Toast.LENGTH_SHORT).show()
             }
-
         }
     }
 
